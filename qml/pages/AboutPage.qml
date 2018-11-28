@@ -46,7 +46,7 @@ Page {
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Code and feedback")
-            onClicked: Qt.openUrlExternally("http://www.github.com/direc85/CountMe_SailfishOS_Qt5")
+            onClicked: Qt.openUrlExternally("http://www.github.com/direc85/harbour-countme2")
         }
     }
 }
