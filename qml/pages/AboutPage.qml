@@ -39,7 +39,7 @@ Page {
         Label {
             x: Theme.paddingLarge*2
             text: "GNU General Public Licence 3.0"
-            color: Theme.primaryColor17
+            color: Theme.primaryColor
 
             font.pixelSize: Theme.fontSizeMedium
         }
