@@ -3,4 +3,4 @@ CountMe 2 is a simple counter application for Sailfish OS. It has two counter ne
 
 I created this as an excersize in creating and publishing an application in Jolla Store, but it does not mean that I'm done with this. Keep your ideas coming!
 
-Matti Viljanen aka direc85
+Matti Viljanen aka. direc85
