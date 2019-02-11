@@ -26,7 +26,8 @@ Page {
             x: Theme.paddingLarge*2
             text: "Gabriel Böhme\nMatti Viljanen"
             color: Theme.primaryColor
-
+            width: parent.width - 2*x
+            wrapMode: Text.Wrap
             font.pixelSize: Theme.fontSizeMedium
         }
         Label {
@@ -40,7 +41,8 @@ Page {
             x: Theme.paddingLarge*2
             text: "GNU General Public Licence 3.0"
             color: Theme.primaryColor
-
+            width: parent.width - 2*x
+            wrapMode: Text.Wrap
             font.pixelSize: Theme.fontSizeMedium
         }
         Button {
