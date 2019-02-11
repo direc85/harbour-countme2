@@ -23,7 +23,8 @@ DISTFILES += qml/harbour-countme2.qml \
     harbour-countme2.desktop \
     qml/pages/MainPage.qml \
     qml/pages/AboutPage.qml \
-    rpm/harbour-countme2.changes.in
+    rpm/harbour-countme2.changes.in \
+    qml/components/KeepAlive.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

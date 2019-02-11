@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtMultimedia 5.0
 import Sailfish.Silica 1.0
+import "../components"
 
 Page {
     id: doublePage
@@ -24,6 +25,10 @@ Page {
     SoundEffect {
         id: soundEffect
         source: "/usr/share/sounds/jolla-ambient/stereo/pulldown_lock.wav"
+    }
+
+    KeepAlive {
+        id: keepAlive
     }
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
@@ -227,15 +232,32 @@ Page {
                 }
             }
             Row {
-                width: parent.width
+                width: column.width
+                height: Theme.paddingMedium
+            }
+            Row {
+                id: switchRow
+                width: column.width
                 Column {
-                    width: parent.width
+                    id: switchLeftColumn
+                    width: switchRow.width / 2
                     Switch {
                         id: soundButton
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: switchLeftColumn.horizontalCenter
                         checked: sound ? true : false
-                        iconSource: sound ? "image://theme/icon-l-speaker" : "image://theme/icon-m-speaker-mute"
+                        iconSource: "image://theme/icon-m-speaker"
                         onClicked: sound ? sound = false : sound = true
+                    }
+                }
+                Column {
+                    id: switchRightColumn
+                    width: switchRow.width / 2
+                    Switch {
+                        id: screenButton
+                        anchors.horizontalCenter: switchRightColumn.horizontalCenter
+                        checked: keepAlive.enabled
+                        iconSource: "image://theme/icon-m-screenlock"
+                        onClicked: keepAlive.enabled = !keepAlive.enabled
                     }
                 }
             }
