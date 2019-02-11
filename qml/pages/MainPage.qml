@@ -34,7 +34,7 @@ Page {
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         id: pageFlickable
-        anchors.fill: parent
+        anchors.fill: doublePage
 
         RemorsePopup {
             id: remorse
@@ -68,14 +68,16 @@ Page {
                 title: "CountMe 2"
             }
             Row {
-                width: parent.width
+                id: counterRow
+                width: column.width
                 //height: counterLeft.height
                 Column {
-                    width: parent.width / 2
+                    id: counterLeftColumn
+                    width: counterRow.width / 2
                     Label {
                         id: counterLeft
                         anchors.topMargin: Theme.paddingMedium
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: counterLeftColumn.horizontalCenter
 
                         text: countLeft
                         //font.family: "Source Sans Pro Light"
@@ -85,11 +87,12 @@ Page {
                     }
                 }
                 Column {
-                    width: parent.width / 2
+                    id: counterRightColumn
+                    width: counterRow.width / 2
                     Label {
                         id: counterRight
                         anchors.topMargin: Theme.paddingMedium
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: counterRightColumn.horizontalCenter
 
                         text: countRight
                         //font.family: "Source Sans Pro Light"
@@ -101,15 +104,17 @@ Page {
             }
 
             Row {
-                width: parent.width
+                id: minusRow
+                width: column.width
                 //height: clickAreaMinusLeft.height
 
                 // Left minus button container
                 Column {
-                    width: parent.width / 2
+                    id: minusLeftColumn
+                    width: minusRow.width / 2
                     Rectangle {
                         id: countClickAreaMinusLeft
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: minusLeftColumn.horizontalCenter
 
                         height: doublePage.width / 3
                         width: doublePage.width / 3
@@ -138,10 +143,11 @@ Page {
 
                 // Right minus button container
                 Column {
-                    width: parent.width / 2
+                    id: minusRightColumn
+                    width: minusRow.width / 2
                     Rectangle {
                         id: countClickAreaMinusRight
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: minusRightColumn.horizontalCenter
 
                         height: doublePage.width / 3
                         width: doublePage.width / 3
@@ -169,12 +175,14 @@ Page {
                 }
             }
             Row {
-                width: parent.width
+                id: plusRow
+                width: column.width
                 Column {
-                    width: parent.width / 2
+                    id: plusLeftColumn
+                    width: plusRow.width / 2
                     Rectangle {
                         id: countClickAreaPlusLeft
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: plusLeftColumn.horizontalCenter
 
                         height: doublePage.width / 2.2
                         width: doublePage.width / 2.2
@@ -201,10 +209,11 @@ Page {
                     }
                 }
                 Column {
-                    width: parent.width / 2
+                    id: plusRightColumn
+                    width: plusRow.width / 2
                     Rectangle {
                         id: countClickAreaPlusRight
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.horizontalCenter: plusRightColumn.horizontalCenter
 
                         height: doublePage.width / 2.2
                         width: doublePage.width / 2.2
