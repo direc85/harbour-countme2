@@ -7,7 +7,7 @@ Page {
 
     PageHeader {
         id: header
-        title: "CountMe 2.0"
+        title: "CountMe 2.1"
     }
 
     Column {
